@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Mickael Fernandes" description="a propos de Mickael Fernandes">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline=" Découvrez mon parcours et mes compétences."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work (2).jpg"
+					alt="Mickael fernandes work"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						D'une formation initial dans l'électrotechnique, j'ai commencé mon parcours professionnel en ayant 
+						été Conducteur De Ligne Automatisée pendant 7 ans dans une usine de sous-traitance automobile.
+						une premiere expérience qui m'a fait évoluer dans de nombreux domaines, rigueur, curiosité, respect des enjeux ,travaille d'équipe.
+						Par la suite, je me suis réorienté vers le Dev et j'ai suivi une formation à distance pendant plus d'un an, jusqu'à obtenir mon diplôme.
+						Ma capacité d'adaptation à de nouveaux environnements et à apprendre de nouvelles choses est sans doute ce qui me caractérise le plus. 
+						Ouvert d'esprit et soif d'acquérir de nouvelles connaissances et de surtout pouvoir les partagers.
+					</p>
+					
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Diplômes</h2>
+				<div class="content">
+					<p>BAC+2 en Développement Web et Web Mobile, Titre Professionnel de niveau V obtenu le 29 mars 2023 à Toulouse.</p>
+				</div>
+			</section>
+            <section>
+				<h2 class="section-title">Compétence Techniques</h2>
+				<div class="content">
+					 <p><strong>Front-end:</strong>  HTML5, CSS3, JQUERY, REACTJS</p>
+					 <p><strong>Back-end:</strong>  PHP, JAVASCRIPT, NODEJS</p>   
+					 <p><strong>Design:</strong>  TAILWIND, BOOTSTRAP, PHOTOSHOP, CANVA</p>
+					 <p><strong>Other:</strong>  GIT & GITHUB</p>    	
+					   
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Soft Skills</h2>
+				<div class="content">
+					<p>Travaille d'équipe, Curieux, Organisé, Polyvalent, Dynamique </p>
+				</div>
+			</section>
+			
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
