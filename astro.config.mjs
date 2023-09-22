@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
 
-site: ' https://mikouss.github.io/portfolio/',
+site: ' https://mikouss.github.io/Portfolio-micka/',
 
 
 });
